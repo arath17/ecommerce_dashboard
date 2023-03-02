@@ -1,0 +1,10 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "target": "ESNext",
+    "outDir": "../../dist/lambda",
+    "sourceMap": true
+  },
+  "include": ["./src"],
+  "exclude": ["**/*.spec.ts"]
+}

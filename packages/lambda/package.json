@@ -1,0 +1,35 @@
+{
+  "name": "@ecommerce_dashboard/lambda",
+  "version": "0.0.1",
+  "license": "UNLICENSED",
+  
+  "repository": "",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "build": "rm -rf ../../dist/lambda && npx webpack && cd ../../dist/lambda && npm init -y && npm install express@4.18.2",
+    "test": "npx jest --coverage",
+    "clean": "rm -rf dist coverage node_modules"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.73",
+    "@types/jest": "^26.0.22",
+    "@types/node": "^14.14.37",
+    "@types/webpack": "^5.28.0",
+    "@types/webpack-bundle-analyzer": "^4.4.0",
+    "jest": "^26.6.3",
+    "noop2": "^2.0.0",
+    "ts-jest": "^26.5.4",
+    "ts-loader": "^9.3.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7.4",
+    "webpack": "^5.30.0",
+    "webpack-bundle-analyzer": "^4.4.1",
+    "webpack-cli": "^4.6.0"
+  },
+  "dependencies": {
+    "@ecommerce_dashboard/server": "^0.0.1",
+    "@vendia/serverless-express": "^4.3.4",
+    "tslib": "^2.1.0"
+  }
+}
