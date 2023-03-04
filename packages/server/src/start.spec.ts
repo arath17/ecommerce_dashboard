@@ -14,7 +14,7 @@ describe("start", () => {
 		expect(listen).toHaveBeenCalledWith(5555, expect.any(Function));
 	});
 
-	it("should start server in port 9000 if port is not provided via environment variable", async () => {
+	it("should start server in port 3001 if port is not provided via environment variable", async () => {
 		const listen = jest.fn((port, callback) => {
 			callback();
 		});
@@ -22,6 +22,6 @@ describe("start", () => {
 
 		delete process.env.PORT;
 		require("./start");
-		expect(listen).toHaveBeenCalledWith(9000, expect.any(Function));
+		expect(listen).toHaveBeenCalledWith(3001, expect.any(Function));
 	});
 });

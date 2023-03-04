@@ -1,4 +1,4 @@
-import { schema } from "./test";
+import { schema } from "./testSchema";
 
 describe("test Schema", () => {
   it("should successfully validate when version is passed", () => {

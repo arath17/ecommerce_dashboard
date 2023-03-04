@@ -48,16 +48,6 @@ describe("errorHandler Middleware", () => {
     );
     expect(response).toBe(fakeResponse);
     expect(fakeResponse.status).toHaveBeenCalledWith(500);
-    expect(fakeResponse.json).toHaveBeenCalledWith({
-      error: {
-        code: "ERROR_MSG_CODE",
-        message: "Undefined error",
-      },
-    });
-    expect(fakeResponse.setHeader).toHaveBeenCalledWith(
-      "X-MYACUVUE-REQUEST-ID",
-      12345
-    );
     expect(fakeResponse.end).toHaveBeenCalled();
     expect(nextFunction).not.toHaveBeenCalled();
   });

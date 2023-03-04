@@ -8,7 +8,7 @@
   "typings": "dist/index.d.ts",
   "scripts": {
     "build": "npx tsc",
-    "test": "npx jest --coverage --forceExit --detectOpenHandles --runInBand",
+    "test": "npx jest --coverage",
     "clean": "rm -rf dist coverage node_modules"
   },
   "devDependencies": {

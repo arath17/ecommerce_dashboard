@@ -1,13 +1,13 @@
 import testRouter from "./index";
 import asyncHandler from "express-async-handler";
 import { requestValidator } from "../../middlewares/requestValidator";
-import { TestRequestHandler } from "./test";
-import { schema as testSchema } from "../../schema/test";
+import { TestRequestHandler } from "./testRequest";
+import { schema as testSchema } from "../../schema/testSchema";
 
 jest.mock("express-async-handler");
 jest.mock("../../middlewares/requestValidator");
-jest.mock("./test");
-jest.mock("../../schema/test");
+jest.mock("./testRequest");
+jest.mock("../../schema/testSchema");
 jest.mock("express", () => ({
   Router: () => ({
     get: jest.fn().mockReturnThis(),

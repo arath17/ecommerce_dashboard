@@ -1,8 +1,8 @@
 import { Router } from "express";
 import asyncHandler from "express-async-handler";
 import { requestValidator } from "../../middlewares/requestValidator";
-import { TestRequestHandler } from "./test";
-import { schema as testSchema } from "../../schema/test";
+import { TestRequestHandler } from "./testRequest";
+import { schema as testSchema } from "../../schema/testSchema";
 
 const testRouter = Router();
 

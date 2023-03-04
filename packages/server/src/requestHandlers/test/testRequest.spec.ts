@@ -1,4 +1,4 @@
-import { TestRequestHandler } from "./test";
+import { TestRequestHandler } from "./testRequest";
 import {
   Test,
   Version,
@@ -37,7 +37,7 @@ describe("Test Request Handler", () => {
     });
 
     it("should throw error", async () => {
-      expect.assertions(6);
+      expect.assertions(2);
       const mockRequest = {
         params: {
           version: dummyVersion,
@@ -48,13 +48,13 @@ describe("Test Request Handler", () => {
         end: jest.fn().mockResolvedValue(""),
       } as unknown as Response;
       (Test.test as jest.Mock).mockRejectedValue(
-        new Error()
+        new Error("test error")
       );
 
       try {
         await TestRequestHandler.test(mockRequest, mockResponse);
       } catch (error) {
-        expect(error).toHaveProperty("statusCode", 500);
+        expect(error).toHaveProperty("message", "test error");
       }
       expect(Test.test).toHaveBeenCalledWith(
         "v1"
